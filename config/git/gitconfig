@@ -1,0 +1,62 @@
+[user]
+  ; @thewatts
+	name = Nathaniel Watts
+  email = 1141717+thewatts@users.noreply.github.com
+
+  ; GPG Signing Key ID
+  ; signingkey = XXXXXXXXXXX
+
+[color]
+	ui = true
+
+[core]
+	excludesfile = /Users/watts/.gitignore
+	editor = nvim
+	pager = diff-so-fancy | less --tabs=4 -RFX
+
+[github]
+  user = thewatts
+
+[hub]
+  protocol = https
+
+[alias]
+  br = branch
+  ci = commit
+  cim = commit -m
+  co = checkout
+  conflicts = diff --name-only --diff-filter=U
+  details = log --graph --all --decorate --stat --date=iso
+  dump = cat-file -p
+  hist = log --pretty=format:'%h %ad | %s%d [%an]' --graph --date=short
+  lola = log --graph --decorate --pretty=oneline --abbrev-commit --all
+  st = status
+  type = cat-file -t
+  undo = reset --soft HEAD^
+
+[filter "media"]
+  required = true
+  clean = git media clean %f
+  smudge = git media smudge %f
+
+[push]
+  default = simple
+
+[filter "lfs"]
+  clean = git-lfs clean -- %f
+  smudge = git-lfs smudge -- %f
+  required = true
+  process = git-lfs filter-process
+
+[commit]
+  ; gpgsign = true
+  ; template = /Users/watts/.stCommitMsg
+
+[rerere]
+  enabled = 1
+
+[gpg]
+  ; program = gpg
+
+[diff]
+  tool = vimdiff

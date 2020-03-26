@@ -1,0 +1,77 @@
+#= Mac OS X =======================================================================================
+
+# Mac OS X metadata
+.DS_Store
+
+#= Development ====================================================================================
+
+# Git
+.git/
+
+# CTags
+/tags
+.tags
+
+# Vim
+;
+
+#= Ruby/Rails =====================================================================================
+
+# Heroku
+*.dump
+
+# ENV
+.env.local
+.env.development
+.env.test
+
+# Rubinius
+*.rbc
+
+# Sass
+*.sassc
+.sass-cache
+
+# Testing
+capybara-*.html
+.rspec
+/spec/tmp/*
+/coverage/
+
+# Bundler
+/.bundle
+/vendor/bundle
+/_vendor/bundle
+vendor/bundle
+
+# Temporary/Log files
+/log/*
+/tmp/*
+tmp.rb
+
+# Databases
+/db/*.sqlite3
+
+# Pow
+.powrc
+.powenv
+.powder
+
+# RVM
+.rvmrc
+
+# metric_fu
+.metrics
+
+# CBRA - Component-based Rails Applications
+components/*/vendor/bundle/
+
+node_modules/
+vendor/assets/bower_components/
+*.sqlite-journal
+.rufo
+
+# Rubocop
+.rubocop.yml
+
+tmp.md
