@@ -66,7 +66,6 @@ call plug#end()
 source $NVIM/appearance.vim
 source $NVIM/interaction.vim
 source $NVIM/indent_guides.vim
-source $NVIM/airline.vim
 source $NVIM/nerdtree.vim
 source $NVIM/theme.vim
 source $NVIM/fzf.vim
