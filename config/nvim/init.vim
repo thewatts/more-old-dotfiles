@@ -69,11 +69,13 @@ source $NVIM/indent_guides.vim
 source $NVIM/nerdtree.vim
 source $NVIM/theme.vim
 source $NVIM/fzf.vim
+
+source $NVIM/elixir.vim
 source $NVIM/git.vim
 source $NVIM/haml.vim
 source $NVIM/html.vim
-source $NVIM/json.vim
-source $NVIM/ruby.vim
 source $NVIM/javascript.vim
+source $NVIM/json.vim
 source $NVIM/python.vim
+source $NVIM/ruby.vim
 source $NVIM/testing.vim
