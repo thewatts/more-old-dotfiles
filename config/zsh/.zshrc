@@ -14,9 +14,9 @@ fi
 
 ## Navigation & Helpers
 alias ...="cd ../.."
-alias code='cd ~/code'
+alias cdc='cd ~/code'
 alias fixpsql='rm /usr/local/var/postgres/postmaster.pid'
-alias installmysql="gem install mysql2 -v '0.5.2' -- --with-ldflags=-L/usr/local/opt/openssl/lib --with-cppflags=-I/usr/local/opt/openssl/include"
+alias installmysql="gem install mysql2 -v '0.5.3' -- --with-ldflags=-L/usr/local/opt/openssl/lib --with-cppflags=-I/usr/local/opt/openssl/include"
 alias launchsim='open -n /Applications/Xcode.app/Contents/Developer/Applications/Simulator.app'
 alias list='ps aux | grep'
 alias mm="brew services restart mysql"
@@ -25,8 +25,10 @@ alias tmp='cd ~/code/sandbox'
 alias tmuxconf='nvim ~/.tmux.conf'
 alias v='nvim'
 alias vimrc='nvim ~/.vimrc'
+alias nvimrc='dots && nvim ~/.dotfiles/config/nvim/init.vim'
 alias wgrok='ngrok http 3000 --subdomain=watts'
 alias zshrc='nvim ~/.zshrc'
+alias dots='cd ~/.dotfiles'
 
 ## Ruby
 alias b='bundle exec'
@@ -94,6 +96,11 @@ alias ks='tmux kill-session -t'
 alias kts='tmux ls | awk '\''{print $1}'\'' | sed '\''s/://g'\'' | xargs -I{} tmux kill-session -t {}'
 
 export PATH=/usr/local/bin:/usr/local/sbin:~/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin
+
+## Projects
+alias de='cd ~/code/detaso'
+alias nlc='cd ~/code/nlc'
+alias so='cd ~/code/61crowns'
 
 # Functions
 
@@ -190,3 +197,8 @@ export PATH="$PATH:./vendor/bin"
 
 export PATH="$PATH:$HOME/.composer/vendor/bin"
 export PATH="/usr/local/opt/qt@5.5/bin:$PATH"
+
+export ERL_AFLAGS="-kernel shell_history enabled"
+
+# So that homebrew services lists "unknown" in an error instead of "running"
+export HOMEBREW_DEVELOPER="true"

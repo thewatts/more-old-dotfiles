@@ -1,18 +1,18 @@
 [user]
   ; @thewatts
-	name = Nathaniel Watts
+  name = Nathaniel Watts
   email = 1141717+thewatts@users.noreply.github.com
 
   ; GPG Signing Key ID
-  ; signingkey = XXXXXXXXXXX
+  ; signingkey = 2496139C292798AE
 
 [color]
-	ui = true
+  ui = true
 
 [core]
-	excludesfile = /Users/watts/.gitignore
-	editor = nvim
-	pager = diff-so-fancy | less --tabs=4 -RFX
+  excludesfile = /Users/watts/.gitignore
+  editor = nvim
+  pager = delta --plus-color="#17AB84" --minus-color="#E53635"
 
 [github]
   user = thewatts
@@ -60,3 +60,6 @@
 
 [diff]
   tool = vimdiff
+
+[interactive]
+  diffFilter = delta --color-only

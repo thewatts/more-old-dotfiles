@@ -1,0 +1,25 @@
+# Use the solarized pry theme
+Pry.config.theme = "solarized"
+
+# Use MacVim as an interactive editor
+Pry.config.editor = "vim"
+
+if defined?(Rails)
+  # Use the current rails app name for the pry prompt
+  if Rails.application.class.respond_to?(:module_parent_name)
+    Pry.config.prompt_name = Rails.application.class.module_parent_name.to_s.underscore.titleize
+  else
+    Pry.config.prompt_name = Rails.application.class.parent_name.to_s.underscore.titleize
+  end
+else
+  # Use the current directory name for the pry prompt
+  Pry.config.prompt_name = Dir.pwd.split('/').last
+end
+
+def dc
+  Detaso.connect!
+end
+
+def dfc
+  Detaso::Database.first.connect!
+end
