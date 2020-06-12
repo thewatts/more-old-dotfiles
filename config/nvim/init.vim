@@ -50,6 +50,8 @@ call plug#begin()
   Plug 'terryma/vim-multiple-cursors'
   " A solid language pack for Vim.
   Plug 'sheerun/vim-polyglot'
+  " vim plugin for highliting code in ruby here document
+  Plug 'joker1007/vim-ruby-heredoc-syntax'
   " surround.vim: quoting/parenthesizing made simple
   Plug 'tpope/vim-surround'
   " Run your tests at the speed of thought
