@@ -24,24 +24,22 @@ call plug#begin()
   Plug 'rhysd/git-messenger.vim'
   " A vim plugin to display the indention levels with thin vertical lines
   Plug 'Yggdroot/indentLine'
+  " A light and configurable statusline/tabline plugin for Vim
+  Plug 'itchyny/lightline.vim'
   " A tree explorer plugin for vim.
   Plug 'preservim/nerdtree'
-  " An arctic, north-bluish clean and elegant Vim theme.
-  Plug 'arcticicestudio/nord-vim'
   " Vim client for TabNine https://tabnine.com/
   Plug 'codota/tabnine-vim'
   " Vim script for text filtering and alignment
   Plug 'godlygeek/tabular'
-  " lean & mean status/tabline for vim that's light as air
-  Plug 'vim-airline/vim-airline'
-  " A collection of themes for vim-airline
-  Plug 'vim-airline/vim-airline-themes'
   " commentary.vim: comment stuff out
   Plug 'tpope/vim-commentary'
   " Adds file type icons to Vim plugins such as: NERDTree, vim-airline, CtrlP, unite, Denite, lightline, vim-startify and many more
   Plug 'ryanoasis/vim-devicons'
   " endwise.vim: wisely add "end" in ruby, endfunction/endif/more in vim script, etc
   Plug 'tpope/vim-endwise'
+  " Equinusocio's material theme for vim
+  Plug 'chuling/vim-equinusocio-material'
   " fugitive.vim: A Git wrapper so awesome, it should be illegal
   Plug 'tpope/vim-fugitive'
   " A Vim plugin which shows a git diff in the sign column and stages/previews/undoes hunks and partial hunks.
