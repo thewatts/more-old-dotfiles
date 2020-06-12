@@ -15,6 +15,8 @@ call plug#begin()
 
   " Vim plugin for the Perl module / CLI script 'ack'
   Plug 'mileszs/ack.vim'
+  " Check syntax in Vim asynchronously and fix files, with Language Server Protocol (LSP) support
+  Plug 'dense-analysis/ale'
   " :cherry_blossom: A command-line fuzzy finder
   Plug 'junegunn/fzf',
     \ { 'dir': '~/.fzf', 'do': './install --bin' }
@@ -65,6 +67,8 @@ call plug#end()
 
 source $NVIM/appearance.vim
 source $NVIM/interaction.vim
+
+source $NVIM/ale.vim
 source $NVIM/indent_guides.vim
 source $NVIM/nerdtree.vim
 source $NVIM/theme.vim
