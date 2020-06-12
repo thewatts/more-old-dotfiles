@@ -25,9 +25,10 @@ alias tmp='cd ~/code/sandbox'
 alias tmuxconf='nvim ~/.tmux.conf'
 alias v='nvim'
 alias vimrc='nvim ~/.vimrc'
-alias nvimrc='cd ~/.dotfiles && nvim ~/.dotfiles/config/nvim/init.vim'
+alias nvimrc='dots && nvim ~/.dotfiles/config/nvim/init.vim'
 alias wgrok='ngrok http 3000 --subdomain=watts'
 alias zshrc='nvim ~/.zshrc'
+alias dots='cd ~/.dotfiles'
 
 ## Ruby
 alias b='bundle exec'
