@@ -1,10 +1,14 @@
 " 01110111 01100001 01110100 01110100 01110011
 " ============================================
 
+let g:polyglot_disabled = ['markdown']
+
 let $NVIM = $HOME . "/.dotfiles/config/nvim"
 
 set nocompatible
 set encoding=utf-8  " Fix special character encoding
+
+let g:colorSchemeMode = 'dark'
 
 "= Plug.vim ====================================================================
 
@@ -38,20 +42,24 @@ call plug#begin()
   Plug 'tpope/vim-commentary'
   " Adds file type icons to Vim plugins such as: NERDTree, vim-airline, CtrlP, unite, Denite, lightline, vim-startify and many more
   Plug 'ryanoasis/vim-devicons'
-  " endwise.vim: wisely add "end" in ruby, endfunction/endif/more in vim script, etc
+  " endwise.vim: wisely add \"end\" in ruby, endfunction/endif/more in vim script, etc
   Plug 'tpope/vim-endwise'
   " Equinusocio's material theme for vim
-  Plug 'chuling/vim-equinusocio-material'
+  " Plug 'chuling/vim-equinusocio-material'
   " fugitive.vim: A Git wrapper so awesome, it should be illegal
   Plug 'tpope/vim-fugitive'
   " A Vim plugin which shows a git diff in the sign column and stages/previews/undoes hunks and partial hunks.
   Plug 'airblade/vim-gitgutter'
+  " Make the yanked region apparent!
+  Plug 'machakann/vim-highlightedyank'
   " :flashlight: [Vim script] JSX and TSX syntax pretty highlighting for vim.
   Plug 'MaxMEllon/vim-jsx-pretty'
-  " True Sublime Text style multiple selections for Vim
-  Plug 'terryma/vim-multiple-cursors'
+  " Multiple cursors plugin for vim/neovim
+  Plug 'mg979/vim-visual-multi'
   " A solid language pack for Vim.
   Plug 'sheerun/vim-polyglot'
+  " One Half ½ 🎨 🖥
+  Plug 'sonph/onehalf', {'rtp': 'vim/'}
   " vim plugin for highliting code in ruby here document
   Plug 'joker1007/vim-ruby-heredoc-syntax'
   " surround.vim: quoting/parenthesizing made simple
@@ -62,6 +70,15 @@ call plug#begin()
   Plug 'christoomey/vim-tmux-navigator'
   " unimpaired.vim: Pairs of handy bracket mappings
   Plug 'tpope/vim-unimpaired'
+  Plug 'rakr/vim-one'
+  Plug 'ayu-theme/ayu-vim'
+  Plug 'NLKNguyen/papercolor-theme'
+  Plug 'ojroques/vim-oscyank'
+
+  " Dracula Pro
+  Plug '~/.dotfiles/config/nvim/dracula_pro'
+
+  Plug 'projekt0n/github-nvim-theme'
 
 call plug#end()
 
@@ -83,3 +100,10 @@ source $NVIM/json.vim
 source $NVIM/python.vim
 source $NVIM/ruby.vim
 source $NVIM/testing.vim
+
+au BufReadPost,BufNewFile *.md let g:indentLine_enabled = 0
+
+augroup SomeName
+    autocmd!
+    autocmd FileType markdown set wrap
+augroup END

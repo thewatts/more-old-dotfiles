@@ -2,6 +2,14 @@
 
   set background=dark
 
+  if g:colorSchemeMode == 'dark'
+    colorscheme onehalfdark
+    colorscheme dracula_pro
+  else
+    set background=light
+    colorscheme PaperColor
+  endif
+
 "- Italics =====================================================================
 
   " From https://www.reddit.com/r/vim/comments/24g8r8/italics_in_terminal_vim_and_tmux/
@@ -22,22 +30,24 @@
   " make vertsplit invisible
   let g:equinusocio_material_hide_vertsplit = 1
 
-  colorscheme equinusocio_material
+  if g:colorSchemeMode == 'dark'
+    highlight rubySymbol guifg=#f78c6c
+    highlight rubyPseudoVariable guifg=#f78c6c
+    highlight rubyKeywordAsMethod guifg=#f78c6c
 
-  highlight rubySymbol guifg=#f78c6c
-  highlight rubyKeywordAsMethod guifg=#f78c6c
+    highlight elixirAtom guifg=#c3e88d
 
-  highlight elixirAtom guifg=#c3e88d
+    highlight elixirComment gui=italic guifg=#546e7a
+    highlight elixirDocString gui=italic guifg=#546e7a
+    highlight elixirVariable gui=italic guifg=#ffcb6b
 
-  highlight elixirComment gui=italic guifg=#546e7a
-  highlight elixirDocString gui=italic guifg=#546e7a
-  highlight elixirVariable gui=italic guifg=#ffcb6b
-
-
-  " this theme has a buildin lightline theme, you can turn it on
-  let g:lightline = {
-    \ 'colorscheme': 'equinusocio_material',
-    \ }
+    " this theme has a buildin lightline theme, you can turn it on
+    let g:lightline = {
+      \ 'colorscheme': 'dracula_pro',
+      \ }
+  else
+    " let g:lightline = { 'colorscheme': 'onehalfdark' }
+  endif
 
   " Lightline
   set noshowmode

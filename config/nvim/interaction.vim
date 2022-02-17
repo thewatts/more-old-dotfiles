@@ -34,8 +34,8 @@
   set backspace=indent,eol,start            " make backspace behave as expected
 
   " easy splits and switches over (\v)
-  nnoremap <leader>v <C-w>v
-  nnoremap <leader>h <C-w>s<C-w><C-w>
+  nnoremap <leader>vv <C-w>v
+  nnoremap <leader>hh <C-w>s
   nnoremap <leader>q :vsplit<cr> :term<cr>
 
   " map escape key to jj -- much faster, comments above b/c of Vim's interpretation of them jumping my cursor
@@ -63,3 +63,7 @@
   if executable("ag")
     let g:ackprg = 'ag --vimgrep'
   end
+
+"= copying
+autocmd TextYankPost * if v:event.operator is 'y' && v:event.regname is '' | OSCYankReg " | endif"
+set clipboard& clipboard^=unnamed,unnamedplus

@@ -75,3 +75,5 @@ vendor/assets/bower_components/
 .rubocop.yml
 
 tmp.md
+tmp.yml
+tmp2.yml

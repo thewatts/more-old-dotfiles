@@ -1,5 +1,8 @@
 "= GIT= ========================================================================
 
+  " Hotkey for adding 'Co-authored-by:' for GitHub
+  map <Leader>gco oCo-authored-by: asdf <asdf@asdf.com><esc>7b
+
   " By default the sign column will appear when there are signs to show and
   " disappear when there aren't. Adding to always have the sign column.
   set signcolumn=yes

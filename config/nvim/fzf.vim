@@ -1,4 +1,5 @@
 "- FZF =========================================================================
+  set rtp+=/opt/homebrew/opt/fzf
 
   let g:fzf_colors =
   \ { 'fg':      ['fg', 'Normal'],

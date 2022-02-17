@@ -12,11 +12,13 @@ fi
 
 # Customize to your needs...
 
-## Navigation & Helpers
+# Navigation & Helpers
 alias ...="cd ../.."
 alias cdc='cd ~/code'
-alias fixpsql='rm /usr/local/var/postgres/postmaster.pid'
-alias installmysql="gem install mysql2 -v '0.5.3' -- --with-ldflags=-L/usr/local/opt/openssl/lib --with-cppflags=-I/usr/local/opt/openssl/include"
+alias cat='bat'
+# alias fixpsql='rm /usr/local/var/postgres/postmaster.pid'
+alias fixpsql='rm /opt/homebrew/var/postgres/postmaster.pid'
+alias installmysql="gem install mysql2 -v '0.5.3' -- --with-ldflags=-L/opt/homebrew/opt/openssl@1.1/lib --with-cppflags=-I/opt/homebrew/opt/openssl@1.1/include"
 alias launchsim='open -n /Applications/Xcode.app/Contents/Developer/Applications/Simulator.app'
 alias list='ps aux | grep'
 alias mm="brew services restart mysql"
@@ -46,12 +48,14 @@ alias cs='bundle exec rails c --sandbox'
 alias hspec='HEADLESS=true bundle exec rspec'
 alias lives='USE_LIVERELOAD=true bundle exec rails s'
 alias rdb='bake db:migrate RAILS_ENV=development && bake db:migrate RAILS_ENV=test'
-alias rist='bake routes | grep'
+alias rist='rails routes | grep'
 alias s='bundle exec rails s'
+alias sb='s -b 0.0.0.0'
 alias setdevdb='bin/rails db:environment:set RAILS_ENV=development'
 alias settestdb='bin/rails db:environment:set RAILS_ENV=test'
 alias springer='bundle exec spring stop'
 alias springrspec='bundle exec spring binstub rspec'
+alias ss='bundle exec spring server'
 
 ## Heroku
 alias capture='heroku pg:backups capture --remote'
@@ -62,11 +66,13 @@ alias hloga='heroku logs -t -a'
 alias hon='heroku run rails c --remote'
 alias hona='heroku run rails c -a'
 alias proxhon='heroku run bin/proximo rails c --remote'
+alias hps='heroku ps --remote'
 
 ## Git
 alias ga.='git add .'
 alias ga='git add'
 alias gb='git branch'
+alias gbc='git branch --sort=-committerdate'
 alias gbd='git branch -d'
 alias gbr='git branch -r'
 alias gc-="git checkout -"
@@ -80,9 +86,9 @@ alias gcoma="git commit --amend"
 alias gcs='git checkout staging'
 alias gd='git diff'
 alias gdd='git diff --patience'
-alias gh='git hist'
+alias ghist='git hist'
 alias ghh='git details'
-alias git='hub'
+# alias git='hub'
 alias gll='git log | head'
 alias gp='git pull'
 alias gpm='git pull origin master'
@@ -90,6 +96,7 @@ alias gprune='git remote prune origin'
 alias gs='git status'
 alias gunstash='git stash show -p | git apply -R'
 alias gwip='git cim "wip"'
+alias gitnuke='git branch | grep -v "main" | xargs git branch -D'
 
 ## Tmux
 alias ks='tmux kill-session -t'
@@ -97,8 +104,12 @@ alias kts='tmux ls | awk '\''{print $1}'\'' | sed '\''s/://g'\'' | xargs -I{} tm
 
 export PATH=/usr/local/bin:/usr/local/sbin:~/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin
 
+## Phoenix
+alias phxs='mix phx.server'
+
 ## Projects
 alias de='cd ~/code/detaso'
+alias dew='cd ~/code/detaso/web'
 alias nlc='cd ~/code/nlc'
 alias so='cd ~/code/61crowns'
 
@@ -119,7 +130,7 @@ alias so='cd ~/code/61crowns'
 
 # open git directory on github
 function hh() {
-  URL=$(cat .git/config | grep github | sed -E 's/^.*(github\.com):(.*)(\.git)?/http:\/\/\1\/\2/')
+  URL=$(cat .git/config | head | grep github | sed -E 's/^.*(github\.com):(.*)(\.git)?/http:\/\/\1\/\2/')
   open $URL
 }
 
@@ -134,6 +145,11 @@ function gpshf() {
   git fetch
   branch=$(git rev-parse --abbrev-ref HEAD)
   git push origin $branch --force-with-lease
+}
+
+function gbsu() {
+  branch=$(git rev-parse --abbrev-ref HEAD)
+  git branch --set-upstream-to=origin/$branch $branch
 }
 
 # head to gems dir w/ autocomplete
